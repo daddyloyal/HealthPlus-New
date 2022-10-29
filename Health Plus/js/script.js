@@ -31,3 +31,18 @@ window.addEventListener('resize', () =>{
         document.body.classList.remove('resize-animation-stopper');
     }, 400);
 });
+
+// Display  username
+function DisplayUsername() {
+    var error = document.getElementById('error');
+    var username = document.getElementById("username").value;
+    if (username.length >= 5) {
+        alert ("Login successfully");
+        window.location = "index.html"; // Redirecting to other page.
+        // save to local storage
+        localStorage.setItem("name",username);
+    }
+    else {
+        error.innerHTML = "Your Username must be at least 5 characters long";
+    }
+}
